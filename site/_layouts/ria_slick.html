@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% include og.html include_meta=true %}
+
+    <link rel="shortcut icon" href="/assets/img/ria-logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.zinc.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans" rel="stylesheet"> -->
+     <!-- HTML in your document's head -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style type="text/css">
+      
+      /* CSS */
+      :root {
+        font-family: Inter, sans-serif;
+        font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+      }
+      @supports (font-variation-settings: normal) {
+        :root { font-family: InterVariable, sans-serif; }
+      }
+      @font-face {
+        font-family: Michroma;
+        src: url(/assets/fonts/michroma-v21-latin-regular.woff2) format("woff2"), url(/assets/fonts/michroma-v21-latin-regular.woff) format("woff");
+      }
+        :root {
+          /* see https://picocss.com/docs/css-variables/ for reference */
+            --pico-font-family: 'Inter', sans-serif;
+            --pico-line-height: 1;
+            --pico-font-weight: 400;
+            --pico-font-size: 87.5%;
+            --border-radius: 0.25rem;
+            --border-width: 1px;
+            --outline-width: 3px;
+            --pico-spacing: 0.33rem;
+            --typography-spacing-vertical: 1.5rem;
+            --block-spacing-vertical: calc(var(--spacing) * 2);
+            --block-spacing-horizontal: var(--spacing);
+            --grid-spacing-vertical: 0;
+            --grid-spacing-horizontal: var(--spacing);
+            --form-element-spacing-vertical: 0.75rem;
+            --form-element-spacing-horizontal: 1rem;
+            --nav-element-spacing-vertical: 1rem;
+            --nav-element-spacing-horizontal: 0.5rem;
+            --nav-link-spacing-vertical: 0.5rem;
+            --nav-link-spacing-horizontal: 0.5rem;
+            --form-label-font-weight: var(--font-weight);
+            --transition: 0.2s ease-in-out;
+            --modal-overlay-backdrop-filter: blur(0.25rem);
+            --primary: #0a66c2;
+          }
+
+          :root:not([data-theme=dark]), [data-theme=light]
+          {
+            --primary: #0a66c2;
+          }
+
+          a[href] {
+            text-decoration: underline;
+
+          }
+      
+          h1, h2, h3, h4, h5, h6 {
+            --pico-font-family: 'Michroma', sans-serif;
+            font-size: larger;
+          }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div style="position:relative; left:-70px">
+        <img src="/assets/img/rhythm-industries.svg" style="width:280px; height: 80px;" alt="Rhythm Industries">
+      </div>
+
+    </header>
+    <!-- Header -->
+    <!-- <header>
+      <hgroup>
+        <h1>Classless example</h1>
+        <h2>Just a pure semantic HTML markup, without <code>.classes</code></h2>
+      </hgroup>
+      <nav>
+        <ul>
+          <li>
+            <details role="list">
+              <summary aria-haspopup="listbox" role="button">Theme</summary>
+              <ul role="listbox">
+                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+                <li><a href="#" data-theme-switcher="light">Light</a></li>
+                <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details role="list">
+              <summary aria-haspopup="listbox">Examples (v1)</summary>
+              <ul role="listbox">
+                <li><a href="../v1-preview/">Preview</a></li>
+                <li><a href="../v1-preview-rtl/">Right-to-left</a></li>
+                <li><a href="../v1-classless/">Classless</a></li>
+                <li><a href="../v1-basic-template/">Basic template</a></li>
+                <li><a href="../v1-company/">Company</a></li>
+                <li><a href="../v1-google-amp/">Google Amp</a></li>
+                <li><a href="../v1-sign-in/">Sign in</a></li>
+                <li><a href="../v1-bootstrap-grid/">Bootstrap grid</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </header> -->
+    <!-- ./ Header -->
+
+    <!-- Main -->
+    <main>
+      {{content}}
+    </main>
+    <!-- ./ Main -->
+
+    <!-- Footer -->
+    <footer>
+      &copy;{{ site.time | date: "%Y" }} Rhythm Industries, Inc. All rights reserved.
+    </footer>
+    <!-- ./ Footer -->
+  </body>
+</html>

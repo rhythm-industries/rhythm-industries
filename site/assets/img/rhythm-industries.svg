@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="-10 -10 130 30"
+  width="280"
+  height="80"
+  role="img"
+  aria-label="Animated scroll diagram">
+
+  <!--
+    Title: Rhythm Industries Logo
+    Date: 2025-12-24
+    Medium: Handcrafted SVG
+    Notes: One idea, one artifact
+    Ref:
+    - https://chatgpt.com/c/694c4a57-509c-8333-a6f5-d4fb0c167c06
+    - https://www.cheat-sheets.org/own/svg/index.xhtml#Circles
+  -->
+  <defs>
+    <style>
+      $gridColor: #e0e0e0;
+      @font-face {
+        font-family: 'Michroma';
+        @import url('./michroma-v21-latin-regular.woff2') format("woff2"), url('/assets/fonts/michroma-v21-latin-regular.woff') format("woff");
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <!-- <rect width="100" height="100" fill="white"/> -->
+
+  <!-- Original: 10x10 grid -->
+  <!-- <path d="M0 0 L100 0 M0 10 L 100 10 M0 20 L 100 20 M0 30 L 100 30 M0 40 L 100 40 M0 50 L 100 50 M0 60 L 100 60 M0 70 L 100 70 M0 80 L 100 80 M0 90 L 100 90 M100 0 L100 100 " stroke="#cccccc" stroke-width="0.5"/>
+  <path d="M0 0 L0 100 M10 0 L10 100 M20 0 L20 100 M30 0 L30 100 M40 0 L40 100 M50 0 L50 100 M60 0 L60 100 M70 0 L70 100 M80 0 L80 100 M90 0 L90 100 M100 0 L100 100" stroke="#cccccc" stroke-width="0.5"/> -->
+
+  <!-- Text harness: 12x2 grid -->
+
+  <!-- <path d="M0 0 L120 0 M0 2 L 120 2 M0 4 L 120 4 M0 6 L 120 6 M0 8 L 120 8 M0 10 L 120 10 M0 12 L 120 12 M0 14 L 120 14 M0 16 L 120 16 M0 18 L 120 18 M0 20 L 120 20 M120 0 L120 20 " stroke="#e0e0e0" stroke-width="0.2"/>
+   <path d="M0 0 L0 20 M10 0 L10 20 M20 0 L20 20 M30 0 L30 20 M40 0 L40 20 M50 0 L50 20 M60 0 L60 20 M70 0 L70 20 M80 0 L80 20 M90 0 L90 20 M100 0 L100 20 M110 0 L110 20 M120 0 L120 20" stroke="#e0e0e0" stroke-width="0.2"/>
+ -->
+   <!--
+   We have 2 arcs of radius 5, so circumference = 2πr = 2 * 3.14 * 5 = 31.4
+   Each arc is half the circle, so length = 31.4 / 2 = 15.7 (rounded to 16 for simplicity)
+   Full circle circumference = 31.4 (rounded to 32 for simplicity)
+
+   For animation:
+   - We want to experience constant acceleration, so we use cubic Bezier easing with keySplines.
+   - For first arc, we wait 0.5s, then draw over 0.5s. We cover 16 units of length. Final speed = 1 unit.
+   - For second arc, we wait 1s, then draw over 0.25s. We cover another 16 units of length. Final speed = 2x initial speed.
+   - For full circle, we wait 1.25s, then draw over 1
+   -->
+  <!-- <circle cx="10" cy="10" r="10" fill="none" stroke="black" stroke-width="0.5"/> -->
+  <circle cx="10" cy="10" r="10" fill="none" stroke="black" stroke-width="1" stroke-dasharray="62.8" stroke-dashoffset="62.8" transform="rotate(90 10 10) translate(0 20) scale(1 -1)">
+    <animate
+      attributeName="stroke-dashoffset"
+      from="62.8"
+      to="0"
+      dur="0.33s"
+      begin="0.75s"
+      fill="freeze"
+      calcMode="spline"
+      keyTimes="0;1"
+      keySplines="0.3 0 0.8 1"
+      />
+  </circle>
+
+  <!-- <path d="M10 10 A5 5 0 0 0 10 0" fill="none" stroke="black" stroke-width="0.5"></path> -->
+
+   <path
+    d="M10 0 A5 5 0 0 1 10 10"
+    fill="none"
+    stroke="black"
+    stroke-width="1"
+    stroke-dasharray="16"
+    stroke-dashoffset="16">
+
+    <animate
+      attributeName="stroke-dashoffset"
+      begin="0.0s"
+      from="16"
+      to="0"
+      dur="0.5s"
+      fill="freeze"
+      calcMode="spline"
+      keyTimes="0;1"
+      keySplines="0.7 0 1 1"
+      />
+  </path>
+
+
+
+  <!-- <path d="M10 10 A5 5 0 0 0 10 20" fill="none" stroke="black" stroke-width="0.5"></path> -->
+  <path d="M10 10 A5 5 0 0 0 10 20" fill="none" stroke="black" stroke-width="1" stroke-dasharray="16" stroke-dashoffset="16">
+        <animate
+      attributeName="stroke-dashoffset"
+      begin="0.5s"
+      from="16"
+      to="0"
+      dur="0.25s"
+      fill="freeze"
+      keyTimes="0;1"
+      keySplines="0.5 0 1 1"
+      />
+  </path>
+  <!-- M 10 10 → move to start point
+       A 5 5 → radius in x and y (circle = same value)
+      0 → no rotation
+      0 → large-arc-flag (0 = small arc, 1 = large arc)
+      1 → sweep-flag (1 = clockwise, 0 = counter-clockwise)
+      10 0 → end point -->
+
+
+  <text x="22" y="11" font-family="Michroma" font-size="12" font-weight="900" fill="black">RHYTHM</text>
+  <text x="22.5" y="19" font-family="Michroma" font-size="8" font-weight="900" fill="black">INDUSTRIES, INC.</text>
+</svg>

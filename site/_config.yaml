@@ -1,0 +1,17 @@
+# Core identity
+title: Rhythm Industries Archive
+timezone: America/New_York
+description: A working archive documenting components, artifacts, and industrial ephemera produced by Rhythm Industries, a small factory just outside of Cincinnati, Ohio.
+
+# Serving
+port: 1984
+host: 127.0.0.1
+incremental: true
+
+safe: false
+plugins: []
+layout: ria
+
+collections:
+  records:
+    output: true

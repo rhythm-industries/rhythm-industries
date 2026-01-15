@@ -1,0 +1,46 @@
+{% assign subsite = site.data.subsites | where_exp:"item", "page.url contains item.url" | first %}
+{% if subsite == nil %}
+  {% assign subsite = site %}
+{% endif%}
+{% assign the_title = subsite.name %}
+{% assign the_section = page.section %}
+{% assign the_description = page.description | default: subsite.description %}
+{% if page.section %}
+    {% assign the_title = the_title | prepend: " – " | prepend: page.section %}
+{% endif %}
+{% if page.title and page.title != "Home" %}
+    {% assign the_title = the_title | prepend: " – " | prepend: page.title %}
+{% endif %}
+{% if include.include_meta %}
+    <title>{{ the_title }}</title>
+    <meta name="description" content="{{ the_description }}">
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="copyright" content="©{{ site.time | date: '%Y' }} {{ site.author.name }}">
+    <link rel="author" href="/colophon">
+{% endif %}
+{% assign og_image = page.image | default: subsite.default_og_image %}
+{% assign og_image_alt = page.image_alt | default: page.title | default: subsite.name %}
+<meta property="og:title" content="{{ the_title }}" />
+<meta property="og:description" content="{{ the_description }}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url | default: '/' }}" />
+<meta property="og:site_name" content="{{ subsite.name }}" />
+{% if og_image %}<meta property="og:image" content="{{ page.image | default: subsite.default_og_image }}" />{% endif %}
+{% if og_image_alt %}<meta property="og:image:alt" content="{{ page.image_alt | default: page.title | default: subsite.name }}" />{% endif %}
+
+{%- comment -%}
+title: Optimal length is 50-60 characters
+description: Optimal length is 110-160 characters
+Open Graph meta tags for Jekyll
+- Works with page.title, page.description, page.image, site.name, site.url
+- Fallbacks included for pages missing optional fields
+{%- endcomment -%}
+
+{%- comment -%}
+Optional Twitter Cards
+- Use same info for simplicity
+{%- endcomment -%}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% if page.section %} – {{ page.section }}{% endif %} – {{ subsite.name | default: site.name }}{% else %}{{ subsite.name | default: site.name }}{% endif %}" />
+<meta name="twitter:description" content="{{ the_description }}" />
+{% if og_image %}<meta property="twitter:image" content="{{ page.image | default: subsite.default_og_image }}" />{% endif %}
+{% if og_image_alt %}<meta property="twitter:image:alt" content="{{ page.image_alt | default: page.title | default: subsite.name }}" />{% endif %}

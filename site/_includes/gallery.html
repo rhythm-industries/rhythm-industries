@@ -1,0 +1,132 @@
+
+<!-- consider using:
+
+https://photoswipe.com/getting-started/
+
+-->
+
+<style type="text/css">
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+/* Reset */
+.gallery figure {
+  margin: 0;
+}
+
+/* Link wrapper */
+.gallery a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Image */
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: inherit; /* uses inline style */
+  background: #eee;      /* placeholder while loading */
+}
+
+/* Caption */
+.gallery figcaption {
+  font-size: 0.85rem;
+  line-height: 1.35;
+  margin-top: 0.25rem;
+  color: #555;
+}
+
+/* Optional: tighter, more “justified” rows (slight crop) */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 0.75rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Optional: caption-on-hover (zero JS) */
+
+.gallery figcaption {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.gallery figure:hover figcaption {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .gallery figcaption {
+    opacity: 1;
+  }
+}
+
+/* Optional: max row width constraint (feels editorial) */
+
+.gallery {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+
+
+</style>
+
+{% assign album = site.data.photos[include.album_path].index %}
+
+# {{album.title}}
+
+<div class="gallery" id="gallery-{{include.album_path}}">
+{% for photo in album.photos %}
+<figure>
+  <a href="https://cdn.ojas.net/photos/{{include.cdn_album_path}}/{{photo.sizes.rs.filename}}"
+    data-pswp-width="{{photo.sizes.rs.w}}" data-pswp-height="{{photo.sizes.rs.h}}" >
+    <img src="https://cdn.ojas.net/photos/{{include.cdn_album_path}}/{{photo.sizes.thumb.filename}}" alt="{{photo.caption}}"
+        width="{{photo.sizes.thumb.w}}" height="{{photo.sizes.thumb.h}}"
+        xstyle="aspect-ratio: {{photo.sizes.rs.w | divided_by: 1.0 | divided_by: photo.sizes.rs.h | round: 5}}">
+    <figcaption>{{photo.caption}}</figcaption>
+  </a>
+</figure>
+<!-- apply css such that caption appears below each image -->
+{% endfor %}
+</div>
+
+
+<link rel="stylesheet" href="/assets/photoswipe/dist/photoswipe.css">
+<script type="module">
+import PhotoSwipeLightbox from '/assets/photoswipe/dist/photoswipe-lightbox.esm.js';
+import PhotoSwipeDynamicCaption from 'https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.esm.js';
+
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '#gallery-{{include.album_path}}',
+  children: 'a',
+  pswpModule: () => import('/assets/photoswipe/dist/photoswipe.esm.js'),
+  // Optional padding for images,
+  // note that this is an option of PhotoSwipe, not a plugin
+  paddingFn: (viewportSize) => {
+    return {
+      top: 30, bottom: 30, left: 70, right: 70
+    }
+  }
+});
+
+const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+  // Plugins options, for example:
+  type: 'auto',
+    captionContent: (slide) => {
+    return slide.data.element.querySelector('img').getAttribute('alt');
+    }
+});
+lightbox.init();
+</script>
