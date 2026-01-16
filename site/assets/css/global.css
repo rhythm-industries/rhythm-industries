@@ -1,0 +1,211 @@
+:root{
+  --paper:#f6f4ef;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --rule:#d8d3c7;
+  --accent:#a33a2b; /* or #1f4ea8 */
+
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --serif:"Source Serif 4", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --w: 74ch;          /* readable ledger width */
+  --g: 1.1rem;        /* base gap */
+  --lh: 1.55;         /* calm reading */
+  --r: 0px;           /* no rounding */
+}
+
+/* Base */
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:var(--lh);
+  font-family:var(--serif);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* Layout */
+.ri-wrap{max-width:var(--w); margin:0 auto; padding:3rem 1.25rem}
+.ri-stack > * + *{margin-top:1.25rem}
+.ri-rule{border-top:1px solid var(--rule); margin:1.1rem 0}
+
+
+/* Headings: placards, not ads */
+h1,h2,h3{
+  font-family:var(--mono);
+  font-weight:600;
+  letter-spacing:0.02em;
+  margin:0;
+}
+h1{font-size:1.35rem}
+h2{font-size:1.05rem; margin-top:2rem}
+h3{font-size:0.95rem; margin-top:1.5rem}
+
+/* Links: underlined, like references */
+a{color:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:2px}
+a:hover{color:var(--accent)}
+
+/* Metadata + labels */
+.ri-meta, small, .ri-label{
+  font-family:var(--mono);
+  color:var(--muted);
+  font-size:0.85rem;
+}
+.ri-label{letter-spacing:0.04em; text-transform:uppercase}
+
+.ri-bar{
+  border:1px solid var(--rule);
+  padding:0.7rem 0.85rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:1rem;
+}
+
+/* Notices (Parts Desk) */
+.ri-notice{
+  font-family:var(--mono);
+  border:1px solid var(--rule);
+  padding:0.6rem 0.75rem;
+  background:transparent;
+}
+.ri-notice strong{color:var(--ink)}
+.ri-notice .ri-tag{
+  display:inline-block;
+  font-size:0.8rem;
+  border:1px solid var(--rule);
+  padding:0.12rem 0.4rem;
+  margin-right:0.6rem;
+}
+.ri-stamp{
+  display:inline-block;
+  border:1px solid var(--rule);
+  padding:0.05rem 0.35rem;
+  font-family:var(--mono);
+}
+
+/* Tables: ledger style */
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-family:var(--mono);
+  font-size:0.9rem;
+}
+th,td{padding:0.55rem 0.4rem; vertical-align:top}
+thead th{
+  text-align:left;
+  border-bottom:1px solid var(--rule);
+  color:var(--muted);
+  font-weight:600;
+}
+tbody tr + tr td{border-top:1px solid var(--rule)}
+td code{font-family:var(--mono); font-size:0.95em}
+
+/* Footer */
+.ri-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:1rem;
+}
+
+/* Code blocks: “printout” */
+pre, code{
+  font-family:var(--mono);
+}
+pre{
+  border:1px solid var(--rule);
+  padding:0.85rem 1rem;
+  overflow:auto;
+  background:transparent;
+}
+
+/* Buttons: look like labels */
+.ri-btn{
+  font-family:var(--mono);
+  border:1px solid var(--rule);
+  padding:0.55rem 0.75rem;
+  background:transparent;
+  color:var(--ink);
+  cursor:pointer;
+  border-radius:var(--r);
+  text-decoration:none;
+  display:inline-block;
+}
+.ri-btn:hover{border-color:var(--accent); color:var(--accent)}
+
+/* Mobile */
+
+/* Mobile fit & finish */
+@media (max-width: 720px){
+  :root{
+    --g: 0.9rem;
+    --lh: 1.6;
+  }
+
+  .ri-wrap{
+    padding: 1.5rem 1rem;
+  }
+
+  /* Slightly smaller placard so it doesn't wrap awkwardly */
+  h1{ font-size: 1.15rem; }
+  h2{ font-size: 1.00rem; }
+
+  /* Tables: allow sideways scroll instead of crushing columns */
+  table{
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  th, td{
+    white-space: nowrap;
+  }
+
+  /* Printouts: same deal */
+  pre{
+    overflow-x: auto;
+  }
+
+  .ri-bar{flex-direction:column; gap:0.35rem;}
+
+  .ri-footer{
+    flex-direction:column;
+    gap:0.25rem;
+  }
+}
+
+/* Make long words/URL behave in body text */
+
+p, li { overflow-wrap: anywhere; }
+
+
+
+
+/* Lists */
+
+ul, ol{
+  margin: 0.4rem 0 0.9rem;
+  padding-left: 1.4rem;   /* consistent left rail */
+}
+li{
+  margin: 0.25rem 0;      /* tighten vertical rhythm */
+}
+
+ul li::marker{
+  font-size: 0.85em;
+  color: var(--muted);
+}
+
+li{
+  overflow-wrap: anywhere;
+}
+
+/* Images */
+
+figure{ margin: 0; }
+figure + figure{ margin-top: 1rem; }
+img{ max-width: 100%; height: auto; border: 1px solid var(--rule); }
+figcaption{ margin-top: 0.35rem; }

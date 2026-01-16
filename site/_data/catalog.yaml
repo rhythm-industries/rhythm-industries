@@ -1,0 +1,18 @@
+# _data/catalog.yaml
+- part: RI-B3552
+  url: /catalog/RI-D324A4
+  description: Self-Indicating Thermometer, 50–550°F
+  category: Instrumentation
+  status: Available
+
+- part: RL011-1
+  url: /catalog/RI011-1
+  description: Hydraulic / Liquid Sight Glass, 3/4"-16 UNF
+  category: Hydraulics
+  status: Available
+
+- part: A1072
+  url: /catalog/A1072
+  description: Wall-Mounted Liquid-in-Glass Thermometer
+  category: Instrumentation
+  status: Reference

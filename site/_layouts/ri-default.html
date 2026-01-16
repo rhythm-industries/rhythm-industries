@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+    {% if page.title %}{{ page.title }} · {% endif %}Rhythm Industries Archive
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/img/ria-logo.svg" type="image/svg+xml">
+
+  <!-- Factory CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
+
+  {% if page.description %}
+  <meta name="description" content="{{ page.description | escape }}">
+  {% endif %}
+</head>
+
+<body>
+  <main class="ri-wrap ri-stack">
+
+    <!-- Placard → nameplate bolted to the machine -->
+    <header class="ri-stack">
+      <h1>
+        {% if page.h1 %}
+          {{ page.h1 }}
+        {% elsif page.title %}
+          {{ page.title | upcase }}
+        {% else %}
+          RHYTHM INDUSTRIES ARCHIVE
+        {% endif %}
+      </h1>
+
+      <div class="ri-meta">
+        {{ site.ri_meta | default: 'Batavia, Ohio · 1980s · Factory records' }}
+      </div>
+    </header>
+    {% unless page.no_top_rule %}
+    <div class="ri-rule"></div>
+    {% endunless %}
+
+    <!-- Page body → work surface -->
+    <article class="ri-stack">
+      {{ content }}
+    </article>
+
+    <div class="ri-rule"></div>
+
+    <!-- Footer → serial stamp + filing location -->
+    <footer class="ri-meta ri-footer">
+        <span>
+            Source files:
+            <a href="https://github.com/rhythm-industries">
+                github.com/rhythm-industries
+            </a>
+        </span>
+        <span>
+            SITE BUILD: {{ site.time | date: "%Y-%m-%d" }}
+        </span>
+    </footer>
+  </main>
+</body>
+</html>
