@@ -1,18 +1,33 @@
 # _data/catalog.yaml
+# Public catalog index. Derived from factory records.
+# Status reflects desk availability or reference state at time of build.
+
 - part: RI-B3552
-  url: /catalog/RI-D324A4
+  url: /catalog/RI-B3552
   description: Self-Indicating Thermometer, 50–550°F
   category: Instrumentation
   status: Available
 
-- part: RL011-1
+- part: RI011-1
   url: /catalog/RI011-1
   description: Hydraulic / Liquid Sight Glass, 3/4"-16 UNF
   category: Hydraulics
   status: Available
 
+- part: RI-D324A4
+  url: /catalog/RI-D324A4
+  description: Self-Indicating Bimetal Thermometer
+  category: Instrumentation
+  status: Reference
+
 - part: A1072
   url: /catalog/A1072
   description: Wall-Mounted Liquid-in-Glass Thermometer
+  category: Instrumentation
+  status: Reference
+
+- part: A1080
+  url: /catalog/A1080
+  description: Candy Thermometer
   category: Instrumentation
   status: Reference
