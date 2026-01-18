@@ -3,6 +3,13 @@ layout: ri-default
 title: Catalog
 description: Catalog of known instruments, components, and related items associated with Rhythm Industries.
 h1: CATALOG
+abbrvs:
+  Instrumentation: Instr
+  Thermometer: Therm
+  Liquid-in-Glass: LIG
+  Bimetallic: BM
+  Hydraulics: Hydra
+  "Sight Indicator": Sight Ind
 ---
 
 This catalog lists known instruments, components, and related items associated with Rhythm Industries.
@@ -18,24 +25,34 @@ Absence from this catalog does not imply nonexistence.
 
 ## Index
 
-<table>
+<table class="catalog-table">
   <thead>
     <tr>
       <th>Part No.</th>
-      <th>Description</th>
+      <th>Type</th>
       <th>Category</th>
       <th>Status</th>
     </tr>
   </thead>
   <tbody>
-    {% assign items = site.data.catalog %}
+    {% assign items = site.catalog | sort: "title" %}
     {% for item in items %}
     <tr>
       <td>
-        <a href="{{ item.url | relative_url }}"><code>{{ item.part }}</code></a>
+        <a href="{{ item.url | relative_url }}"><code>{{ item.h1 }}</code></a>
       </td>
       <td>{{ item.description }}</td>
-      <td>{{ item.category }}</td>
+      <td class="category">
+        {% assign cats = item.category | split: " · " %}
+        {% for cat in cats %}
+          {% if page.abbrvs[cat] %}
+            <abbr title="{{ cat }}">{{ page.abbrvs[cat] }}</abbr>
+          {% else %}
+            {{ cat }}
+          {% endif %}
+          {% unless forloop.last %} · {% endunless %}
+        {% endfor %}
+      </td>
       <td>{{ item.status }}</td>
     </tr>
     {% endfor %}

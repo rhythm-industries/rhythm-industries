@@ -17,3 +17,14 @@ layout: ria
 collections:
   records:
     output: true
+
+  catalog:
+    output: true
+    permalink: /catalog/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: catalog
+    values:
+      layout: catalog-item

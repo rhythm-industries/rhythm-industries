@@ -209,3 +209,18 @@ figure{ margin: 0; }
 figure + figure{ margin-top: 1rem; }
 img{ max-width: 100%; height: auto; border: 1px solid var(--rule); }
 figcaption{ margin-top: 0.35rem; }
+
+.catalog-table {
+  font-family: inherit
+}
+.catalog-table td,
+.catalog-table th {
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .catalog-table td,
+  .catalog-table th {
+    white-space: normal;
+  }
+}

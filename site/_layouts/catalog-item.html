@@ -1,0 +1,93 @@
+---
+layout: ri-default
+---
+
+<table>
+  <tbody>
+    <tr>
+      <th style="text-align:left">Type</th>
+      <td>{{ page.description }}</td>
+    </tr>
+    {% if page.part_number %}
+    <tr>
+      <th style="text-align:left">Part No.</th>
+      <td>{{ page.part_number }}</td>
+    </tr>
+    {% endif %}
+    {% if page.marking %}
+    <tr>
+      <th style="text-align:left">Marking</th>
+      <td>{{ page.marking }}</td>
+    </tr>
+    {% endif %}
+    <tr>
+      <th style="text-align:left">Category</th>
+      <td>{{ page.category }}</td>
+    </tr>
+    <tr>
+      <th style="text-align:left">Status</th>
+      <td>{{ page.status }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="ri-rule"></div>
+
+<h2>Description</h2>
+{{ content }}
+
+{% if page.specifications and page.specifications.size > 0 %}
+<h2>Specifications</h2>
+
+<table>
+  <tbody>
+    {% for spec in page.specifications %}
+    <tr>
+      <td>{{ spec.name }}</td>
+      <td>{{ spec.value }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+{% if page.images and page.images.size > 0 %}
+<h2>Images</h2>
+
+<p class="ri-meta">
+Images: <code>{{ page.images.first }}</code>{% if page.images.size > 1 %} – <code>{{ page.images.last }}</code>{% endif %}
+</p>
+
+{% for img in page.images %}
+<figure>
+  <a href="{{ img | relative_url }}">
+    <img src="{{ img | relative_url }}" alt="{{ page.h1 }} image {{ forloop.index }}" loading="lazy">
+  </a>
+  <figcaption class="ri-meta">{{ page.h1 }}.{{ forloop.index | prepend: "00" | slice: -3, 3 }}</figcaption>
+</figure>
+{% endfor %}
+
+<div class="ri-rule"></div>
+{% endif %}
+
+{% if page.notes and page.notes.size > 0 %}
+<h2>Notes</h2>
+
+{% for note in page.notes %}
+<ul>
+  <li class="note-{{note.type}}">{{note.html}}</li>
+</ul>
+{% endfor %}
+
+{% endif %}
+
+<h2>Desk Status</h2>
+<p>
+For current availability, see the <a href="{{ '/parts' | relative_url }}">Parts Desk</a>.
+</p>
+
+<div class="ri-rule"></div>
+
+<p class="ri-meta">
+Related: <a href="{{ '/catalog' | relative_url }}">Catalog</a>
+</p>
