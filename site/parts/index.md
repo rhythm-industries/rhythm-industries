@@ -1,5 +1,4 @@
 ---
-layout: ri-default
 title: Parts Desk
 description: Surplus instruments, components, and equipment handled through the Rhythm Industries Parts Desk.
 h1: PARTS DESK

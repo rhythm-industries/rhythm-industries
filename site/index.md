@@ -1,5 +1,4 @@
 ---
-layout: ri-default
 title: Rhythm Industries Archive
 description: Factory records documenting instruments manufactured by Rhythm Industries in Batavia, Ohio.
 h1: RHYTHM INDUSTRIES ARCHIVE
@@ -17,10 +16,11 @@ Descriptions reflect the best information available. Errors or omissions may exi
 
 ## STATIONS
 
+- [Catalog](/catalog/)
+- [Parts Desk](/parts/)
 - [Archive Index](/archive/)
 - [Provenance Ledger](/provenance/)
 - [Shop Notes](/notes/)
-- [Parts Desk](/parts/)
 
 ## SCOPE
 

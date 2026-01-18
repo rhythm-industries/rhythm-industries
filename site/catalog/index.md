@@ -1,5 +1,4 @@
 ---
-layout: ri-default
 title: Catalog
 description: Catalog of known instruments, components, and related items associated with Rhythm Industries.
 h1: CATALOG
