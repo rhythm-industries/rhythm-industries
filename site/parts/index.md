@@ -23,27 +23,42 @@ no_top_rule: true
 
 ## Available Items
 
-<table>
+<table class="catalog-table">
   <thead>
     <tr>
-      <th>Part</th>
-      <th>Description</th>
-      <th>Condition</th>
-      <th>Notes</th>
+      <th>Part No.</th>
+      <th>Type</th>
+      <th>Category</th>
+      <th>Status</th>
     </tr>
   </thead>
   <tbody>
+    {% assign items = site.catalog | sort: "title" | where: "status", "Available" %}
+    {% for item in items %}
     <tr>
-      <td><a href="/catalog/RI011-1/">RI011-1</a></td>
-      <td>Hydraulic / Liquid Sight Glass, 3/4"-16 UNF (Fine)</td>
-      <td>New</td>
-      <td>Surplus</td>
+      <td>
+        <a href="{{ item.url | relative_url }}"><code>{{ item.h1 }}</code></a>
+      </td>
+      <td>{{ item.description }}</td>
+      <td class="category">
+        {% assign cats = item.category | split: " · " %}
+        {% for cat in cats %}
+          {% if site.data.abbrvs[cat] %}
+            <abbr title="{{ cat }}">{{ site.data.abbrvs[cat] }}</abbr>
+          {% else %}
+            {{ cat }}
+          {% endif %}
+          {% unless forloop.last %} · {% endunless %}
+        {% endfor %}
+      </td>
+      <td>{{ item.status }}</td>
     </tr>
+    {% endfor %}
     <tr>
       <td><code>SHOP-TRUCK</code></td>
       <td>2005 Toyota Tacoma 2WD V6</td>
-      <td>Used</td>
-      <td>Shop truck</td>
+      <td>Vehicle</td>
+      <td>Available</td>
     </tr>
   </tbody>
 </table>

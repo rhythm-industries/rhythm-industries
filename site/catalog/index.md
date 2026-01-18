@@ -3,13 +3,6 @@ layout: ri-default
 title: Catalog
 description: Catalog of known instruments, components, and related items associated with Rhythm Industries.
 h1: CATALOG
-abbrvs:
-  Instrumentation: Instr
-  Thermometer: Therm
-  Liquid-in-Glass: LIG
-  Bimetallic: BM
-  Hydraulics: Hydra
-  "Sight Indicator": Sight Ind
 ---
 
 This catalog lists known instruments, components, and related items associated with Rhythm Industries.
@@ -45,8 +38,8 @@ Absence from this catalog does not imply nonexistence.
       <td class="category">
         {% assign cats = item.category | split: " · " %}
         {% for cat in cats %}
-          {% if page.abbrvs[cat] %}
-            <abbr title="{{ cat }}">{{ page.abbrvs[cat] }}</abbr>
+          {% if site.data.abbrvs[cat] %}
+            <abbr title="{{ cat }}">{{ site.data.abbrvs[cat] }}</abbr>
           {% else %}
             {{ cat }}
           {% endif %}
