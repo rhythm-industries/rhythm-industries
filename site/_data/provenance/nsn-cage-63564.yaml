@@ -1,0 +1,352 @@
+source:
+  system: National Stock Number (NSN)
+  cage: "63564"
+  compiled_from: parttarget.com
+  notes: >
+    Records compiled from publicly accessible NSN databases filtered by CAGE 63564.
+    Details reflect external cataloging conventions and may differ from factory documentation.
+    See: Rhythm Industries Parts Research.gsheet
+
+items:
+  - part: RI-012-01
+    nsn: 5975-00-825-5423
+    nomenclature: Cabinet, Electrical Equipment
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 5005
+      - End item identification: F-16 aircraft support equipment
+      - Style: B3 vertical front two piece
+
+  - part: RI-012-02
+    nsn: 5975-00-825-5427
+    nomenclature: Cabinet, Electrical Equipment
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum
+      - Style: B3 vertical front two piece
+      - Overall width: 2.750 in nominal
+
+  - part: RI-012-03
+    nsn: 5975-00-825-5424
+    nomenclature: Cabinet, Electrical Equipment
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum
+      - End item identification: F-4 aircraft support equipment
+      - Style: B3 vertical front two piece
+
+  - part: RI-012-11
+    nsn: 5975-00-825-5426
+    nomenclature: Cabinet, Electrical Equipment
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum
+      - Style: Vertical front two piece
+      - Overall width: 5.250 in nominal
+
+  - part: RI-012-111
+    nsn: 5975-00-079-8246
+    nomenclature: Cabinet, Electrical Equipment
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 5005
+      - End item identification: B-52 aircraft support equipment
+      - Style: B3 vertical front two piece
+
+  - part: RI-013-011
+    nsn: 5975-00-421-4194
+    nomenclature: Panel, Blank
+    fsc: 5975
+
+  - part: RI-013-012
+    nsn: 5975-00-056-3984
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 3003
+      - Style: F1 blank, plain design
+      - Special features: Temper H14
+
+  - part: RI-013-021
+    nsn: 5975-00-880-3130
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 5005
+      - Style: F1 blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-022
+    nsn: 5975-00-880-3137
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 3003
+      - End item identification: F-4 aircraft support equipment
+      - Style: F1 blank, plain design
+
+  - part: RI-013-023
+    nsn: 5975-00-685-9545
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Steel
+      - Style: Blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-03
+    nsn: 5975-00-880-3131
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum
+      - Style: Blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-031
+    nsn: 5975-00-880-3131
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum
+      - Style: Blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-033
+    nsn: 5975-00-685-9546
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Steel
+      - Style: Blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-041
+    nsn: 5975-00-880-3132
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum
+      - Style: F1 blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-043X
+    nsn: 5975-00-567-2766
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Steel
+      - Style: Blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-051-3003-H14
+    nsn: 5975-00-880-3133
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum
+      - Style: F1 blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-052
+    nsn: 5975-00-051-7332
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 3003
+      - Style: F1 blank, plain design
+
+  - part: RI-013-061
+    nsn: 5975-00-880-3134
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 5005
+      - Style: Blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-063
+    nsn: 5975-00-234-4868
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Steel
+      - Style: F1 blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-071
+    nsn: 5975-00-880-3135
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum
+      - Style: F1 blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-013-082
+    nsn: 5975-00-086-1423
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 3003
+      - Style: Blank, plain design
+      - Special features: Temper H14
+
+  - part: RI-013-092
+    nsn: 5975-00-975-4660
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 3003
+      - Style: Blank, plain design
+      - Special features: Temper H14
+
+  - part: RI-013-121
+    nsn: 5975-00-402-4493
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy
+      - Style: F1 blank, plain design
+      - Overall width: 19.000 in nominal
+
+  - part: RI-014-012
+    nsn: 5975-00-685-9537
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 3003
+      - Style: Blank, plain design
+      - Special features: Temper H14
+
+  - part: RI-014-042
+    nsn: 5975-00-685-9539
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 3003
+      - Style: Blank, plain design
+      - Special features: Temper H14
+
+  - part: RI-014-072
+    nsn: 5975-00-685-9542
+    nomenclature: Panel, Blank
+    fsc: 5975
+    external_notes:
+      - Material: Aluminum alloy 3003
+      - Style: F1 blank, plain design
+      - Special features: Temper H14
+
+  - part: RI-011
+    nsn: 6680-00-808-9023
+    nomenclature: Indicator, Sight, Liquid
+    fsc: 6680
+    external_notes:
+      - Media: Oil
+      - Overall height: 0.900 in nominal
+      - Style: Bulls eye
+
+  - part: RI-011
+    nsn: 6680-00-852-3600
+    nomenclature: Indicator, Sight, Liquid
+    fsc: 6680
+    external_notes:
+      - Media: Oil
+      - Overall height: 0.900 in nominal
+      - Style: Bulls eye
+
+  - part: RI-011
+    nsn: 6680-00-857-2397
+    nomenclature: Indicator, Sight, Liquid
+    fsc: 6680
+    external_notes:
+      - Media: Any acceptable
+      - Overall height: 0.740 in nominal
+      - Style: Bulls eye
+
+  - part: RI-011-1
+    nsn: 6680-00-857-2397
+    nomenclature: Indicator, Sight, Liquid
+    fsc: 6680
+    external_notes:
+      - Media: Any acceptable
+      - Overall height: 0.740 in nominal
+      - Style: Bulls eye
+
+  - part: RI-011-2
+    nsn: 6680-00-852-3600
+    nomenclature: Indicator, Sight, Liquid
+    fsc: 6680
+    external_notes:
+      - Media: Oil
+      - Overall height: 0.900 in nominal
+      - Style: Bulls eye
+
+  - part: RI-011-3
+    nsn: 6680-00-808-9023
+    nomenclature: Indicator, Sight, Liquid
+    fsc: 6680
+    external_notes:
+      - Media: Oil
+      - Overall height: 0.900 in nominal
+      - Style: Bulls eye
+
+  - part: RI-T200-2
+    nsn: 6685-00-243-9964
+    nomenclature: Thermometer, Self-Indicating
+    fsc: 6685
+    external_notes:
+      - End item identification: Ohio-class SSBN; Ohio-class SSN; Black Hawk helicopter (as listed)
+      - Scale range: 0–160°F
+
+  - part: RI-019-01
+    nsn: 6685-00-782-5250
+    nomenclature: Thermometer, Self-Indicating, Bimetal
+    fsc: 6685
+    external_notes:
+      - Scale type: Concentric dial
+      - Smallest increment: 5°F
+      - Inscription/background: Black on white
+
+  - part: RI-B3552
+    nsn: 6685-00-782-5248
+    nomenclature: Thermometer, Self-Indicating, Bimetal
+    fsc: 6685
+    external_notes:
+      - Scale type: Concentric dial
+      - Smallest increment: 5°F
+      - Inscription/background: Black on white
+
+  - part: RI-017-01
+    nsn: 6685-01-149-2778
+    nomenclature: Thermowell
+    fsc: 6685
+    external_notes:
+      - Bulb tip length: 2.000 in nominal
+
+  - part: RI-017-02
+    nsn: 6685-01-251-2641
+    nomenclature: Thermowell
+    fsc: 6685
+    external_notes:
+      - Material: Steel, AISI 316 (as listed)
+      - Overall length: 3.312 in nominal
+      - Bulb tip length: 2.000 in nominal
+
+  - part: RI-026
+    nsn: 6685-00-543-1393
+    nomenclature: Thermowell
+    fsc: 6685
+    external_notes:
+      - Material: Brass
+      - Overall length: 5.250 in nominal
+      - Style: Threaded stepped, straight shank
+
+  - part: RI-S001
+    nsn: 6685-00-556-5407
+    nomenclature: Thermowell
+    fsc: 6685
+    external_notes:
+      - Material: Steel, stainless (as listed)
+      - Overall length: 3.250 in nominal
+      - Style: Threaded stepped, straight shank

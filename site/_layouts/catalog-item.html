@@ -20,6 +20,12 @@ layout: ri-default
       <td>{{ page.marking }}</td>
     </tr>
     {% endif %}
+    {% if page.nsn %}
+    <tr>
+      <th style="text-align:left">NSN</th>
+      <td>{{ page.nsn }}</td>
+    </tr>
+    {% endif %}
     <tr>
       <th style="text-align:left">Category</th>
       <td>{{ page.category }}</td>
